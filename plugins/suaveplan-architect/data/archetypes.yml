@@ -22,6 +22,7 @@ password-manager:
     - events
     - crypto
     - auth
+    - security
     - vaulted
     - database
     - storage
@@ -35,9 +36,12 @@ password-manager:
     - search
     - network-core
   notes: |
-    `vaulted` carries the SRP/OTP/WebAuthn/CBOR primitives. `drive` carries
-    encrypted file attachments and sharing. Pair `crypto` and `vaulted`
-    explicitly — `vaulted` depends on `crypto`.
+    `vaulted` carries the SRP/OTP/WebAuthn/CBOR primitives. `security`
+    bundles SLSA, secret/PII detection, sandbox, audit logging, HIBP
+    breach checks, and credential-storage bridges (macos-keychain,
+    password-formats). `drive` carries encrypted file attachments and
+    sharing. Pair `crypto` and `vaulted` explicitly — `vaulted` depends
+    on `crypto`.
 
 multiplayer-3d-game:
   name: Multiplayer 3D game
@@ -98,6 +102,7 @@ saas-web-app:
     - config
     - events
     - auth
+    - security
     - database
     - storage
     - data
@@ -117,8 +122,9 @@ saas-web-app:
     - drive
     - codes
   notes: |
-    Pair `auth` (which carries the multi-tenant API plugin) with `database`
-    + `data` for the standard CRUD layer.
+    Pair `auth` (multi-tenant API plugin) with `security` (audit-logging,
+    data-masking, slsa, sandbox), `database` and `data` for the standard
+    secure CRUD layer.
 
 logistics-platform:
   name: Logistics / supply-chain platform

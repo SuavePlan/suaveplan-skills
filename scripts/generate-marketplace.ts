@@ -35,36 +35,37 @@ interface Marketplace {
 
 const DESCRIPTIONS: Record<string, { description: string; category: string; keywords: string[] }> = {
 	foundation: { description: "Error hierarchy, shared types, TypeScript config presets", category: "core", keywords: ["error", "types", "typescript-config"] },
-	observability: { description: "Logger, OpenTelemetry, profiler, audit logging, analytics", category: "core", keywords: ["logging", "otel", "tracing"] },
+	observability: { description: "Logger, OpenTelemetry, profiler, network observability, health checks", category: "core", keywords: ["logging", "otel", "tracing", "health"] },
 	primitives: { description: "Bytes, timing, datetime, MIME, serialize, diff, templates, bitpacker", category: "core", keywords: ["primitives", "datetime", "serialize"] },
 	i18n: { description: "Internationalisation core, locale data, React translation components", category: "core", keywords: ["i18n", "locale"] },
 	validation: { description: "Runtime schema validation and registry", category: "core", keywords: ["validation", "zod", "schema"] },
-	"control-flow": { description: "Retry strategies, idempotency, FSM, undo/redo", category: "core", keywords: ["retry", "fsm", "idempotency"] },
+	"control-flow": { description: "Retry strategies, idempotency, FSM, undo/redo, rate limiter, job scheduler", category: "core", keywords: ["retry", "fsm", "idempotency", "rate-limit", "scheduler"] },
 	config: { description: "Environment loading, layered config, feature flags", category: "core", keywords: ["config", "env", "feature-flags"] },
 	events: { description: "Event bus, sourcing, OTel/metrics/schema bridges, transport", category: "core", keywords: ["events", "pubsub", "event-sourcing"] },
 	streams: { description: "Stream processing, queues, chunked pipelines", category: "core", keywords: ["streams", "queue"] },
 	random: { description: "Seeded PRNGs, CSPRNG utilities, noise fields", category: "core", keywords: ["random", "noise", "prng"] },
 
 	crypto: { description: "Hash, curve, cipher, AEAD, signing, key agreement, vaults", category: "crypto", keywords: ["crypto", "aead", "ed25519", "argon2"] },
-	auth: { description: "Auth, permissions, JWT, OAuth, SLSA, server keys, sandbox", category: "auth", keywords: ["auth", "jwt", "rbac", "oauth"] },
+	auth: { description: "Authentication + authorization: auth, permissions, JWT, OAuth, RBAC/ABAC", category: "auth", keywords: ["auth", "jwt", "rbac", "oauth", "permissions"] },
+	security: { description: "Supply-chain (SLSA, SBOM), secret/PII detection, redaction, sandbox isolation, audit, breach checks, credential storage", category: "security", keywords: ["slsa", "audit", "sandbox", "pii", "redaction", "secrets"] },
 	vaulted: { description: "Password manager toolkit: SRP, OTP, WebAuthn, CBOR, vault orchestration", category: "auth", keywords: ["password-manager", "webauthn", "srp", "vault"] },
 
 	database: { description: "DB adapters (SQLite, SurrealDB), cache, migrations, seeding", category: "data", keywords: ["database", "sqlite", "surrealdb", "cache"] },
 	storage: { description: "Key-value storage backends: file, S3, IndexedDB, OPFS", category: "data", keywords: ["storage", "s3", "opfs"] },
 	drive: { description: "Encrypted virtual filesystem, sharing, P2P sync, file upload", category: "data", keywords: ["drive", "filesystem", "encryption"] },
-	data: { description: "ETL, CRDT, dedup, pagination, masking, A/B testing, GraphQL", category: "data", keywords: ["etl", "crdt", "graphql"] },
+	data: { description: "ETL, CRDT, dedup, pagination, A/B testing, browser analytics, GraphQL", category: "data", keywords: ["etl", "crdt", "graphql", "analytics"] },
 	search: { description: "Full-text search client and API plugin", category: "data", keywords: ["search", "fts"] },
 
 	"network-core": { description: "Networking primitives: protocol, quality, failover, websockets, discovery", category: "network", keywords: ["network", "websocket"] },
 	"network-p2p": { description: "P2P: WebRTC, libp2p, hyperswarm, gossip discovery", category: "network", keywords: ["p2p", "webrtc", "libp2p"] },
 
-	api: { description: "API framework, gateway, plugins (rate-limit, audit, SSE, webhook, GraphQL)", category: "api", keywords: ["api", "rest", "gateway"] },
-	platform: { description: "CLI, Electrobun, PWA, web workers, clipboard, iconz", category: "platform", keywords: ["cli", "electrobun", "pwa"] },
-	"react-ui": { description: "React component library: tables, modals, charts, command palette, kanban", category: "ui", keywords: ["react", "components", "ui"] },
+	api: { description: "API framework, gateway, plugins (rate-limit, SSE, webhook, GraphQL, CMS)", category: "api", keywords: ["api", "rest", "gateway"] },
+	platform: { description: "CLI, Electrobun, PWA, web workers, clipboard, iconz, macOS contacts", category: "platform", keywords: ["cli", "electrobun", "pwa"] },
+	"react-ui": { description: "React component library: tables, modals, charts, command palette, kanban, iPhone simulator", category: "ui", keywords: ["react", "components", "ui"] },
 	workflow: { description: "Workflow/saga orchestration, rules, form builder, wizard", category: "workflow", keywords: ["workflow", "rules", "forms"] },
 
 	email: { description: "Email parsing, templates, campaigns, suppression, DMARC, deliverability", category: "comms", keywords: ["email", "dmarc", "campaigns"] },
-	messaging: { description: "SMS providers, notification routing, message channels", category: "comms", keywords: ["sms", "notifications"] },
+	messaging: { description: "SMS providers, notification routing, webhook delivery, message channels", category: "comms", keywords: ["sms", "notifications", "webhook"] },
 	social: { description: "Slack, Discord, Telegram, iMessage clients and React social UI", category: "comms", keywords: ["slack", "discord", "telegram"] },
 
 	payment: { description: "Payment intents, providers (Stripe/PayPal/Square), banking, subscriptions, store", category: "commerce", keywords: ["payment", "stripe", "subscription"] },
@@ -76,7 +77,7 @@ const DESCRIPTIONS: Record<string, { description: string; category: string; keyw
 	astronomy: { description: "Universe observer, solar system, stars, tides", category: "geo", keywords: ["astronomy", "stars", "tides"] },
 
 	"media-core": { description: "Media metadata, EXIF reader/writer", category: "media", keywords: ["media", "exif"] },
-	image: { description: "Image processing: format detection, quantisation, compression", category: "media", keywords: ["image", "compress"] },
+	image: { description: "Image processing: format detection, quantisation, compression, Caddy imgproxy integration", category: "media", keywords: ["image", "compress", "imgproxy"] },
 	svg: { description: "SVG compression and pixel-art conversion", category: "media", keywords: ["svg"] },
 	fonts: { description: "Font subsetting, conversion, BTF compression", category: "media", keywords: ["fonts", "ttf", "woff2"] },
 	video: { description: "Video metadata, thumbnails, React player", category: "media", keywords: ["video"] },
@@ -85,7 +86,7 @@ const DESCRIPTIONS: Record<string, { description: string; category: string; keyw
 	dmx: { description: "DMX512 lighting control engine + 3D visualisation", category: "media", keywords: ["dmx", "lighting"] },
 	codes: { description: "Barcode and QR code generation/scanning", category: "media", keywords: ["barcode", "qrcode"] },
 
-	dev: { description: "Test utilities: vitest fixtures, DOM helpers, Playwright E2E, integration containers", category: "dev", keywords: ["testing", "playwright", "vitest"] },
+	dev: { description: "Test utilities: vitest fixtures, DOM helpers, Playwright E2E, integration containers, linter", category: "dev", keywords: ["testing", "playwright", "vitest", "linter"] },
 	mcp: { description: "Model Context Protocol server/client", category: "dev", keywords: ["mcp"] },
 
 	"gaming-engine": { description: "ECS, game loop, spatial hash, persistence, server, controllers", category: "gaming", keywords: ["ecs", "game-loop", "gaming"] },

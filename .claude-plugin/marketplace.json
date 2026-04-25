@@ -19,7 +19,7 @@
     {
       "name": "suaveplan-api",
       "source": "./plugins/suaveplan-api",
-      "description": "API framework, gateway, plugins (rate-limit, audit, SSE, webhook, GraphQL)",
+      "description": "API framework, gateway, plugins (rate-limit, SSE, webhook, GraphQL, CMS)",
       "category": "api",
       "keywords": [
         "api",
@@ -52,13 +52,14 @@
     {
       "name": "suaveplan-auth",
       "source": "./plugins/suaveplan-auth",
-      "description": "Auth, permissions, JWT, OAuth, SLSA, server keys, sandbox",
+      "description": "Authentication + authorization: auth, permissions, JWT, OAuth, RBAC/ABAC",
       "category": "auth",
       "keywords": [
         "auth",
         "jwt",
         "rbac",
-        "oauth"
+        "oauth",
+        "permissions"
       ]
     },
     {
@@ -95,12 +96,14 @@
     {
       "name": "suaveplan-control-flow",
       "source": "./plugins/suaveplan-control-flow",
-      "description": "Retry strategies, idempotency, FSM, undo/redo",
+      "description": "Retry strategies, idempotency, FSM, undo/redo, rate limiter, job scheduler",
       "category": "core",
       "keywords": [
         "retry",
         "fsm",
-        "idempotency"
+        "idempotency",
+        "rate-limit",
+        "scheduler"
       ]
     },
     {
@@ -129,12 +132,13 @@
     {
       "name": "suaveplan-data",
       "source": "./plugins/suaveplan-data",
-      "description": "ETL, CRDT, dedup, pagination, masking, A/B testing, GraphQL",
+      "description": "ETL, CRDT, dedup, pagination, A/B testing, browser analytics, GraphQL",
       "category": "data",
       "keywords": [
         "etl",
         "crdt",
-        "graphql"
+        "graphql",
+        "analytics"
       ]
     },
     {
@@ -152,12 +156,13 @@
     {
       "name": "suaveplan-dev",
       "source": "./plugins/suaveplan-dev",
-      "description": "Test utilities: vitest fixtures, DOM helpers, Playwright E2E, integration containers",
+      "description": "Test utilities: vitest fixtures, DOM helpers, Playwright E2E, integration containers, linter",
       "category": "dev",
       "keywords": [
         "testing",
         "playwright",
-        "vitest"
+        "vitest",
+        "linter"
       ]
     },
     {
@@ -356,11 +361,12 @@
     {
       "name": "suaveplan-image",
       "source": "./plugins/suaveplan-image",
-      "description": "Image processing: format detection, quantisation, compression",
+      "description": "Image processing: format detection, quantisation, compression, Caddy imgproxy integration",
       "category": "media",
       "keywords": [
         "image",
-        "compress"
+        "compress",
+        "imgproxy"
       ]
     },
     {
@@ -396,11 +402,12 @@
     {
       "name": "suaveplan-messaging",
       "source": "./plugins/suaveplan-messaging",
-      "description": "SMS providers, notification routing, message channels",
+      "description": "SMS providers, notification routing, webhook delivery, message channels",
       "category": "comms",
       "keywords": [
         "sms",
-        "notifications"
+        "notifications",
+        "webhook"
       ]
     },
     {
@@ -427,12 +434,13 @@
     {
       "name": "suaveplan-observability",
       "source": "./plugins/suaveplan-observability",
-      "description": "Logger, OpenTelemetry, profiler, audit logging, analytics",
+      "description": "Logger, OpenTelemetry, profiler, network observability, health checks",
       "category": "core",
       "keywords": [
         "logging",
         "otel",
-        "tracing"
+        "tracing",
+        "health"
       ]
     },
     {
@@ -458,7 +466,7 @@
     {
       "name": "suaveplan-platform",
       "source": "./plugins/suaveplan-platform",
-      "description": "CLI, Electrobun, PWA, web workers, clipboard, iconz",
+      "description": "CLI, Electrobun, PWA, web workers, clipboard, iconz, macOS contacts",
       "category": "platform",
       "keywords": [
         "cli",
@@ -491,7 +499,7 @@
     {
       "name": "suaveplan-react-ui",
       "source": "./plugins/suaveplan-react-ui",
-      "description": "React component library: tables, modals, charts, command palette, kanban",
+      "description": "React component library: tables, modals, charts, command palette, kanban, iPhone simulator",
       "category": "ui",
       "keywords": [
         "react",
@@ -507,6 +515,20 @@
       "keywords": [
         "search",
         "fts"
+      ]
+    },
+    {
+      "name": "suaveplan-security",
+      "source": "./plugins/suaveplan-security",
+      "description": "Supply-chain (SLSA, SBOM), secret/PII detection, redaction, sandbox isolation, audit, breach checks, credential storage",
+      "category": "security",
+      "keywords": [
+        "slsa",
+        "audit",
+        "sandbox",
+        "pii",
+        "redaction",
+        "secrets"
       ]
     },
     {
