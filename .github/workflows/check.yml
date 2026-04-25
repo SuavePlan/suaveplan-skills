@@ -23,7 +23,7 @@ jobs:
       - name: Check out genesis (read-only, for assignment.yml + READMEs)
         uses: actions/checkout@v4
         with:
-          repository: SuavePlan/genesis
+          repository: SuavePlan/monorepo
           ref: genesis
           path: genesis
           token: ${{ secrets.GENESIS_READ_TOKEN }}
