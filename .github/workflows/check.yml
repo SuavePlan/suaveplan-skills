@@ -1,0 +1,50 @@
+name: check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  drift:
+    name: Marketplace + skills drift
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out suaveplan-skills
+        uses: actions/checkout@v4
+        with:
+          path: suaveplan-skills
+
+      - name: Check out genesis (read-only, for assignment.yml + READMEs)
+        uses: actions/checkout@v4
+        with:
+          repository: SuavePlan/genesis
+          ref: genesis
+          path: genesis
+          token: ${{ secrets.GENESIS_READ_TOKEN }}
+
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        working-directory: suaveplan-skills
+        run: bun install --frozen-lockfile
+
+      - name: Verify marketplace.json is up to date
+        working-directory: suaveplan-skills
+        run: bun scripts/generate-marketplace.ts --check
+
+      - name: Verify SKILL.md files are up to date
+        working-directory: suaveplan-skills
+        run: bun scripts/generate-skills.ts --check
+
+      - name: Verify pick-plugins matcher is consistent with archetypes.yml
+        working-directory: suaveplan-skills
+        run: bun scripts/match-archetype.ts --self-test

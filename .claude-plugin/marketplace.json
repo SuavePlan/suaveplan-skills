@@ -1,0 +1,597 @@
+{
+  "name": "suaveplan",
+  "owner": {
+    "name": "Suaveplan",
+    "url": "https://github.com/SuavePlan"
+  },
+  "plugins": [
+    {
+      "name": "suaveplan-architect",
+      "source": "./plugins/suaveplan-architect",
+      "description": "Start here — interrogates your use case and recommends the right Suaveplan plugins for it (password manager, multiplayer game, SaaS, logistics, etc.)",
+      "category": "meta",
+      "keywords": [
+        "architect",
+        "scaffold",
+        "recommend"
+      ]
+    },
+    {
+      "name": "suaveplan-api",
+      "source": "./plugins/suaveplan-api",
+      "description": "API framework, gateway, plugins (rate-limit, audit, SSE, webhook, GraphQL)",
+      "category": "api",
+      "keywords": [
+        "api",
+        "rest",
+        "gateway"
+      ]
+    },
+    {
+      "name": "suaveplan-astronomy",
+      "source": "./plugins/suaveplan-astronomy",
+      "description": "Universe observer, solar system, stars, tides",
+      "category": "geo",
+      "keywords": [
+        "astronomy",
+        "stars",
+        "tides"
+      ]
+    },
+    {
+      "name": "suaveplan-audio",
+      "source": "./plugins/suaveplan-audio",
+      "description": "Web Audio engine, FX plugins, controllers, voice, fingerprinting",
+      "category": "media",
+      "keywords": [
+        "audio",
+        "voice",
+        "midi"
+      ]
+    },
+    {
+      "name": "suaveplan-auth",
+      "source": "./plugins/suaveplan-auth",
+      "description": "Auth, permissions, JWT, OAuth, SLSA, server keys, sandbox",
+      "category": "auth",
+      "keywords": [
+        "auth",
+        "jwt",
+        "rbac",
+        "oauth"
+      ]
+    },
+    {
+      "name": "suaveplan-booking",
+      "source": "./plugins/suaveplan-booking",
+      "description": "Resource booking engine + 3D venue maps",
+      "category": "commerce",
+      "keywords": [
+        "booking",
+        "scheduling"
+      ]
+    },
+    {
+      "name": "suaveplan-codes",
+      "source": "./plugins/suaveplan-codes",
+      "description": "Barcode and QR code generation/scanning",
+      "category": "media",
+      "keywords": [
+        "barcode",
+        "qrcode"
+      ]
+    },
+    {
+      "name": "suaveplan-config",
+      "source": "./plugins/suaveplan-config",
+      "description": "Environment loading, layered config, feature flags",
+      "category": "core",
+      "keywords": [
+        "config",
+        "env",
+        "feature-flags"
+      ]
+    },
+    {
+      "name": "suaveplan-control-flow",
+      "source": "./plugins/suaveplan-control-flow",
+      "description": "Retry strategies, idempotency, FSM, undo/redo",
+      "category": "core",
+      "keywords": [
+        "retry",
+        "fsm",
+        "idempotency"
+      ]
+    },
+    {
+      "name": "suaveplan-crypto",
+      "source": "./plugins/suaveplan-crypto",
+      "description": "Hash, curve, cipher, AEAD, signing, key agreement, vaults",
+      "category": "crypto",
+      "keywords": [
+        "crypto",
+        "aead",
+        "ed25519",
+        "argon2"
+      ]
+    },
+    {
+      "name": "suaveplan-currency",
+      "source": "./plugins/suaveplan-currency",
+      "description": "Currency conversion, money math, cryptocurrency wallets",
+      "category": "commerce",
+      "keywords": [
+        "currency",
+        "money",
+        "crypto"
+      ]
+    },
+    {
+      "name": "suaveplan-data",
+      "source": "./plugins/suaveplan-data",
+      "description": "ETL, CRDT, dedup, pagination, masking, A/B testing, GraphQL",
+      "category": "data",
+      "keywords": [
+        "etl",
+        "crdt",
+        "graphql"
+      ]
+    },
+    {
+      "name": "suaveplan-database",
+      "source": "./plugins/suaveplan-database",
+      "description": "DB adapters (SQLite, SurrealDB), cache, migrations, seeding",
+      "category": "data",
+      "keywords": [
+        "database",
+        "sqlite",
+        "surrealdb",
+        "cache"
+      ]
+    },
+    {
+      "name": "suaveplan-dev",
+      "source": "./plugins/suaveplan-dev",
+      "description": "Test utilities: vitest fixtures, DOM helpers, Playwright E2E, integration containers",
+      "category": "dev",
+      "keywords": [
+        "testing",
+        "playwright",
+        "vitest"
+      ]
+    },
+    {
+      "name": "suaveplan-dmx",
+      "source": "./plugins/suaveplan-dmx",
+      "description": "DMX512 lighting control engine + 3D visualisation",
+      "category": "media",
+      "keywords": [
+        "dmx",
+        "lighting"
+      ]
+    },
+    {
+      "name": "suaveplan-drive",
+      "source": "./plugins/suaveplan-drive",
+      "description": "Encrypted virtual filesystem, sharing, P2P sync, file upload",
+      "category": "data",
+      "keywords": [
+        "drive",
+        "filesystem",
+        "encryption"
+      ]
+    },
+    {
+      "name": "suaveplan-email",
+      "source": "./plugins/suaveplan-email",
+      "description": "Email parsing, templates, campaigns, suppression, DMARC, deliverability",
+      "category": "comms",
+      "keywords": [
+        "email",
+        "dmarc",
+        "campaigns"
+      ]
+    },
+    {
+      "name": "suaveplan-events",
+      "source": "./plugins/suaveplan-events",
+      "description": "Event bus, sourcing, OTel/metrics/schema bridges, transport",
+      "category": "core",
+      "keywords": [
+        "events",
+        "pubsub",
+        "event-sourcing"
+      ]
+    },
+    {
+      "name": "suaveplan-fonts",
+      "source": "./plugins/suaveplan-fonts",
+      "description": "Font subsetting, conversion, BTF compression",
+      "category": "media",
+      "keywords": [
+        "fonts",
+        "ttf",
+        "woff2"
+      ]
+    },
+    {
+      "name": "suaveplan-foundation",
+      "source": "./plugins/suaveplan-foundation",
+      "description": "Error hierarchy, shared types, TypeScript config presets",
+      "category": "core",
+      "keywords": [
+        "error",
+        "types",
+        "typescript-config"
+      ]
+    },
+    {
+      "name": "suaveplan-gaming-ai",
+      "source": "./plugins/suaveplan-gaming-ai",
+      "description": "Behaviour trees, NPCs, fauna, R3F pathfinding",
+      "category": "gaming",
+      "keywords": [
+        "ai",
+        "behavior-tree",
+        "navmesh"
+      ]
+    },
+    {
+      "name": "suaveplan-gaming-combat",
+      "source": "./plugins/suaveplan-gaming-combat",
+      "description": "Damage, weapons, hitboxes, destructibles, R3F combat FX",
+      "category": "gaming",
+      "keywords": [
+        "combat",
+        "weapons"
+      ]
+    },
+    {
+      "name": "suaveplan-gaming-effects",
+      "source": "./plugins/suaveplan-gaming-effects",
+      "description": "Particles, shaders, parallax, 3D audio, LOD, performance, XR, emulator",
+      "category": "gaming",
+      "keywords": [
+        "particles",
+        "shaders",
+        "xr"
+      ]
+    },
+    {
+      "name": "suaveplan-gaming-engine",
+      "source": "./plugins/suaveplan-gaming-engine",
+      "description": "ECS, game loop, spatial hash, persistence, server, controllers",
+      "category": "gaming",
+      "keywords": [
+        "ecs",
+        "game-loop",
+        "gaming"
+      ]
+    },
+    {
+      "name": "suaveplan-gaming-multiplayer",
+      "source": "./plugins/suaveplan-gaming-multiplayer",
+      "description": "Lobby, party, chat, emotes, leaderboard, matchmaking, anti-cheat, virtual currency",
+      "category": "gaming",
+      "keywords": [
+        "multiplayer",
+        "matchmaking"
+      ]
+    },
+    {
+      "name": "suaveplan-gaming-narrative",
+      "source": "./plugins/suaveplan-gaming-narrative",
+      "description": "Dialogue, quests, crafting, progression, economy",
+      "category": "gaming",
+      "keywords": [
+        "dialogue",
+        "quest",
+        "crafting"
+      ]
+    },
+    {
+      "name": "suaveplan-gaming-physics",
+      "source": "./plugins/suaveplan-gaming-physics",
+      "description": "R3F physics core + Rapier + Cascade",
+      "category": "gaming",
+      "keywords": [
+        "physics",
+        "rapier"
+      ]
+    },
+    {
+      "name": "suaveplan-gaming-rigs",
+      "source": "./plugins/suaveplan-gaming-rigs",
+      "description": "Character/vehicle physics, IK, animation, Mixamo, R3F characters",
+      "category": "gaming",
+      "keywords": [
+        "character",
+        "vehicle",
+        "rigging"
+      ]
+    },
+    {
+      "name": "suaveplan-gaming-ui",
+      "source": "./plugins/suaveplan-gaming-ui",
+      "description": "HUD, map, settings, R3F UI/minimap/inventory",
+      "category": "gaming",
+      "keywords": [
+        "hud",
+        "minimap",
+        "inventory"
+      ]
+    },
+    {
+      "name": "suaveplan-gaming-world",
+      "source": "./plugins/suaveplan-gaming-world",
+      "description": "Building, weather, world simulation, R3F terrain/water/vegetation, day-night replacement",
+      "category": "gaming",
+      "keywords": [
+        "world",
+        "weather",
+        "terrain"
+      ]
+    },
+    {
+      "name": "suaveplan-geo",
+      "source": "./plugins/suaveplan-geo",
+      "description": "Geometry (Earth + arbitrary planets), buildings, heightmap tiles, 3D globe",
+      "category": "geo",
+      "keywords": [
+        "geo",
+        "geospatial",
+        "earth"
+      ]
+    },
+    {
+      "name": "suaveplan-i18n",
+      "source": "./plugins/suaveplan-i18n",
+      "description": "Internationalisation core, locale data, React translation components",
+      "category": "core",
+      "keywords": [
+        "i18n",
+        "locale"
+      ]
+    },
+    {
+      "name": "suaveplan-image",
+      "source": "./plugins/suaveplan-image",
+      "description": "Image processing: format detection, quantisation, compression",
+      "category": "media",
+      "keywords": [
+        "image",
+        "compress"
+      ]
+    },
+    {
+      "name": "suaveplan-logistics",
+      "source": "./plugins/suaveplan-logistics",
+      "description": "Shipments, customs, procurement, warehouse, port tracking",
+      "category": "commerce",
+      "keywords": [
+        "logistics",
+        "warehouse",
+        "shipping"
+      ]
+    },
+    {
+      "name": "suaveplan-mcp",
+      "source": "./plugins/suaveplan-mcp",
+      "description": "Model Context Protocol server/client",
+      "category": "dev",
+      "keywords": [
+        "mcp"
+      ]
+    },
+    {
+      "name": "suaveplan-media-core",
+      "source": "./plugins/suaveplan-media-core",
+      "description": "Media metadata, EXIF reader/writer",
+      "category": "media",
+      "keywords": [
+        "media",
+        "exif"
+      ]
+    },
+    {
+      "name": "suaveplan-messaging",
+      "source": "./plugins/suaveplan-messaging",
+      "description": "SMS providers, notification routing, message channels",
+      "category": "comms",
+      "keywords": [
+        "sms",
+        "notifications"
+      ]
+    },
+    {
+      "name": "suaveplan-network-core",
+      "source": "./plugins/suaveplan-network-core",
+      "description": "Networking primitives: protocol, quality, failover, websockets, discovery",
+      "category": "network",
+      "keywords": [
+        "network",
+        "websocket"
+      ]
+    },
+    {
+      "name": "suaveplan-network-p2p",
+      "source": "./plugins/suaveplan-network-p2p",
+      "description": "P2P: WebRTC, libp2p, hyperswarm, gossip discovery",
+      "category": "network",
+      "keywords": [
+        "p2p",
+        "webrtc",
+        "libp2p"
+      ]
+    },
+    {
+      "name": "suaveplan-observability",
+      "source": "./plugins/suaveplan-observability",
+      "description": "Logger, OpenTelemetry, profiler, audit logging, analytics",
+      "category": "core",
+      "keywords": [
+        "logging",
+        "otel",
+        "tracing"
+      ]
+    },
+    {
+      "name": "suaveplan-payment",
+      "source": "./plugins/suaveplan-payment",
+      "description": "Payment intents, providers (Stripe/PayPal/Square), banking, subscriptions, store",
+      "category": "commerce",
+      "keywords": [
+        "payment",
+        "stripe",
+        "subscription"
+      ]
+    },
+    {
+      "name": "suaveplan-pdf",
+      "source": "./plugins/suaveplan-pdf",
+      "description": "PDF generation and React viewer",
+      "category": "media",
+      "keywords": [
+        "pdf"
+      ]
+    },
+    {
+      "name": "suaveplan-platform",
+      "source": "./plugins/suaveplan-platform",
+      "description": "CLI, Electrobun, PWA, web workers, clipboard, iconz",
+      "category": "platform",
+      "keywords": [
+        "cli",
+        "electrobun",
+        "pwa"
+      ]
+    },
+    {
+      "name": "suaveplan-primitives",
+      "source": "./plugins/suaveplan-primitives",
+      "description": "Bytes, timing, datetime, MIME, serialize, diff, templates, bitpacker",
+      "category": "core",
+      "keywords": [
+        "primitives",
+        "datetime",
+        "serialize"
+      ]
+    },
+    {
+      "name": "suaveplan-random",
+      "source": "./plugins/suaveplan-random",
+      "description": "Seeded PRNGs, CSPRNG utilities, noise fields",
+      "category": "core",
+      "keywords": [
+        "random",
+        "noise",
+        "prng"
+      ]
+    },
+    {
+      "name": "suaveplan-react-ui",
+      "source": "./plugins/suaveplan-react-ui",
+      "description": "React component library: tables, modals, charts, command palette, kanban",
+      "category": "ui",
+      "keywords": [
+        "react",
+        "components",
+        "ui"
+      ]
+    },
+    {
+      "name": "suaveplan-search",
+      "source": "./plugins/suaveplan-search",
+      "description": "Full-text search client and API plugin",
+      "category": "data",
+      "keywords": [
+        "search",
+        "fts"
+      ]
+    },
+    {
+      "name": "suaveplan-social",
+      "source": "./plugins/suaveplan-social",
+      "description": "Slack, Discord, Telegram, iMessage clients and React social UI",
+      "category": "comms",
+      "keywords": [
+        "slack",
+        "discord",
+        "telegram"
+      ]
+    },
+    {
+      "name": "suaveplan-storage",
+      "source": "./plugins/suaveplan-storage",
+      "description": "Key-value storage backends: file, S3, IndexedDB, OPFS",
+      "category": "data",
+      "keywords": [
+        "storage",
+        "s3",
+        "opfs"
+      ]
+    },
+    {
+      "name": "suaveplan-streams",
+      "source": "./plugins/suaveplan-streams",
+      "description": "Stream processing, queues, chunked pipelines",
+      "category": "core",
+      "keywords": [
+        "streams",
+        "queue"
+      ]
+    },
+    {
+      "name": "suaveplan-svg",
+      "source": "./plugins/suaveplan-svg",
+      "description": "SVG compression and pixel-art conversion",
+      "category": "media",
+      "keywords": [
+        "svg"
+      ]
+    },
+    {
+      "name": "suaveplan-validation",
+      "source": "./plugins/suaveplan-validation",
+      "description": "Runtime schema validation and registry",
+      "category": "core",
+      "keywords": [
+        "validation",
+        "zod",
+        "schema"
+      ]
+    },
+    {
+      "name": "suaveplan-vaulted",
+      "source": "./plugins/suaveplan-vaulted",
+      "description": "Password manager toolkit: SRP, OTP, WebAuthn, CBOR, vault orchestration",
+      "category": "auth",
+      "keywords": [
+        "password-manager",
+        "webauthn",
+        "srp",
+        "vault"
+      ]
+    },
+    {
+      "name": "suaveplan-video",
+      "source": "./plugins/suaveplan-video",
+      "description": "Video metadata, thumbnails, React player",
+      "category": "media",
+      "keywords": [
+        "video"
+      ]
+    },
+    {
+      "name": "suaveplan-workflow",
+      "source": "./plugins/suaveplan-workflow",
+      "description": "Workflow/saga orchestration, rules, form builder, wizard",
+      "category": "workflow",
+      "keywords": [
+        "workflow",
+        "rules",
+        "forms"
+      ]
+    }
+  ]
+}

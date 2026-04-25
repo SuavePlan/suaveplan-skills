@@ -1,0 +1,304 @@
+# Project archetypes — recipes consumed by the pick-plugins skill.
+#
+# Each archetype names a project shape and the Suaveplan plugins that fit it.
+# `core` is the always-recommended set; `optional` is contextual extras.
+# `signals` are phrases in user descriptions that match this archetype.
+
+password-manager:
+  name: Password manager / vault
+  signals:
+    - password manager
+    - vault
+    - 1password
+    - bitwarden
+    - credential storage
+    - secrets manager
+  core:
+    - foundation
+    - observability
+    - primitives
+    - validation
+    - control-flow
+    - events
+    - crypto
+    - auth
+    - vaulted
+    - database
+    - storage
+    - drive
+    - codes
+    - react-ui
+    - platform
+    - dev
+  optional:
+    - i18n
+    - search
+    - network-core
+  notes: |
+    `vaulted` carries the SRP/OTP/WebAuthn/CBOR primitives. `drive` carries
+    encrypted file attachments and sharing. Pair `crypto` and `vaulted`
+    explicitly — `vaulted` depends on `crypto`.
+
+multiplayer-3d-game:
+  name: Multiplayer 3D game
+  signals:
+    - multiplayer game
+    - 3d game
+    - r3f game
+    - online game
+    - game engine
+    - game server
+  core:
+    - foundation
+    - observability
+    - primitives
+    - events
+    - streams
+    - random
+    - network-core
+    - network-p2p
+    - gaming-engine
+    - gaming-rigs
+    - gaming-physics
+    - gaming-combat
+    - gaming-ai
+    - gaming-world
+    - gaming-multiplayer
+    - gaming-ui
+    - gaming-effects
+    - gaming-narrative
+    - geo
+    - astronomy
+    - audio
+    - dev
+  optional:
+    - auth
+    - database
+    - drive
+    - workflow
+  notes: |
+    `gaming-world` includes the universe-family game layer (gaming-universe,
+    gaming-environment-lighting). For solo/local games drop `network-p2p`
+    and `gaming-multiplayer`.
+
+saas-web-app:
+  name: SaaS web application
+  signals:
+    - saas
+    - web app
+    - dashboard
+    - admin panel
+    - multi-tenant
+  core:
+    - foundation
+    - observability
+    - primitives
+    - validation
+    - control-flow
+    - config
+    - events
+    - auth
+    - database
+    - storage
+    - data
+    - search
+    - api
+    - react-ui
+    - workflow
+    - email
+    - payment
+    - currency
+    - platform
+    - dev
+  optional:
+    - i18n
+    - messaging
+    - social
+    - drive
+    - codes
+  notes: |
+    Pair `auth` (which carries the multi-tenant API plugin) with `database`
+    + `data` for the standard CRUD layer.
+
+logistics-platform:
+  name: Logistics / supply-chain platform
+  signals:
+    - logistics
+    - shipping
+    - warehouse
+    - customs
+    - port tracking
+    - inventory
+    - procurement
+  core:
+    - foundation
+    - observability
+    - primitives
+    - validation
+    - auth
+    - database
+    - storage
+    - api
+    - logistics
+    - geo
+    - react-ui
+    - workflow
+    - email
+    - dev
+  optional:
+    - currency
+    - data
+    - search
+    - messaging
+  notes: |
+    `geo` covers ports/heightmap/3D globe. `logistics` carries every
+    api-plugin-* in this domain.
+
+p2p-decentralised-app:
+  name: P2P / decentralised app
+  signals:
+    - p2p
+    - decentralised
+    - decentralized
+    - libp2p
+    - hyperswarm
+    - webrtc
+    - dweb
+  core:
+    - foundation
+    - observability
+    - primitives
+    - events
+    - crypto
+    - network-core
+    - network-p2p
+    - drive
+    - storage
+    - database
+    - dev
+  optional:
+    - auth
+    - data
+    - codes
+  notes: |
+    `database` includes SurrealDB for distributed state. `drive-webrtc` and
+    `network-discovery-*` live under `network-p2p` and `drive`.
+
+email-marketing-platform:
+  name: Email / marketing platform
+  signals:
+    - email platform
+    - newsletter
+    - mailing list
+    - email campaign
+    - marketing automation
+    - drip campaign
+  core:
+    - foundation
+    - observability
+    - primitives
+    - validation
+    - auth
+    - database
+    - storage
+    - email
+    - social
+    - messaging
+    - react-ui
+    - workflow
+    - api
+    - data
+    - dev
+  optional:
+    - payment
+    - i18n
+    - search
+  notes: |
+    `email` covers DMARC, suppression, audience rules, deliverability tracking.
+    `data` carries `ab-testing` and `api-plugin-analytics`.
+
+dmx-lighting-controller:
+  name: DMX / stage-lighting controller
+  signals:
+    - dmx
+    - stage lighting
+    - lighting controller
+    - dmx512
+  core:
+    - foundation
+    - primitives
+    - dmx
+    - react-ui
+    - network-core
+    - platform
+    - dev
+  optional:
+    - audio
+    - events
+
+observatory-tool:
+  name: Astronomy / observatory tool
+  signals:
+    - astronomy
+    - observatory
+    - star chart
+    - planetarium
+    - tides
+    - solar system
+  core:
+    - foundation
+    - primitives
+    - geo
+    - astronomy
+    - react-ui
+    - platform
+    - dev
+  optional:
+    - database
+    - validation
+
+api-service:
+  name: Backend API service
+  signals:
+    - api service
+    - rest api
+    - graphql api
+    - microservice
+    - backend service
+  core:
+    - foundation
+    - observability
+    - primitives
+    - validation
+    - control-flow
+    - config
+    - events
+    - auth
+    - database
+    - storage
+    - data
+    - api
+    - dev
+  optional:
+    - search
+    - messaging
+    - workflow
+    - drive
+
+cli-tool:
+  name: CLI tool
+  signals:
+    - cli tool
+    - command line
+    - terminal app
+  core:
+    - foundation
+    - primitives
+    - control-flow
+    - config
+    - platform
+    - dev
+  optional:
+    - validation
+    - storage
+    - data

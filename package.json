@@ -1,0 +1,20 @@
+{
+  "name": "suaveplan-skills",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Claude Code plugin marketplace for the Suaveplan monorepo",
+  "type": "module",
+  "scripts": {
+    "generate:marketplace": "bun scripts/generate-marketplace.ts",
+    "generate:skills": "bun scripts/generate-skills.ts",
+    "check:marketplace": "bun scripts/generate-marketplace.ts --check",
+    "check:skills": "bun scripts/generate-skills.ts --check",
+    "check": "bun run check:marketplace && bun run check:skills"
+  },
+  "dependencies": {
+    "yaml": "^2.6.1"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.2.0"
+  }
+}
